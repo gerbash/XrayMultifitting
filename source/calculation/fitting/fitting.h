@@ -3,10 +3,10 @@
 
 #include "calculation/main_calculation_module.h"
 #include "calculation/fitting/fitting_gsl.h"
-#include "calculation/fitting/fitting_swarmops.h"
+//#include "calculation/fitting/fitting_swarmops.h"
 #include <gsl/gsl_blas.h>
 #include <setjmp.h>
-#include <SwarmOps/Statistics/Results.h>
+//#include <SwarmOps/Statistics/Results.h>
 
 class Main_Calculation_Module;
 class Fitting_GSL;
@@ -36,7 +36,7 @@ struct Fitting_Params
 	// for SwarmOps
 	size_t counter;
 	size_t num_Iter;
-	SO_Results my_Res;
+	//SO_Results my_Res;
 };
 
 class Fitting
@@ -60,7 +60,7 @@ public:
 	QVector<int> widths;
 
         Fitting_GSL* fitting_GSL;
-        Fitting_SwarmOps* fitting_SwarmOps;
+        //Fitting_SwarmOps* fitting_SwarmOps;
 
 
 	static double func(double argument);

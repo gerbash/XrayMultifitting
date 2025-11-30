@@ -12,7 +12,8 @@ Fitting::Fitting(Main_Calculation_Module* main_Calculation_Module):
 	p(fitables.param_Pointers.size()),
 
         fitting_GSL(new Fitting_GSL(this)),
-        fitting_SwarmOps(new Fitting_SwarmOps(this)),
+        //fitting_SwarmOps(new Fitting_SwarmOps(this)),
+        //fix later
 
 	params({main_Calculation_Module,
 		   calculation_Trees,
@@ -45,7 +46,8 @@ Fitting::~Fitting()
 	gsl_vector_free(x);
 
         delete fitting_GSL;
-        delete fitting_SwarmOps;
+        //delete fitting_SwarmOps;
+        //fix later
 }
 
 double Fitting::func(double argument)
@@ -741,7 +743,8 @@ bool Fitting::run_Fitting()
 	if(	SO_Methods.contains(global_Multilayer_Approach->fitting_Settings->current_Method) )
 	{
 		qInfo() << "SO " << global_Multilayer_Approach->fitting_Settings->current_Method << "optimization" << endl;
-                return fitting_SwarmOps->fit();
+                //return fitting_SwarmOps->fit();
+                //fix later
 	}
 
 	QMessageBox::warning(nullptr,"Wrong fitting method", "Fitting was canceled.\nCheck fitting method in Fitting settings window.");
